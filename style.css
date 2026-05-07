@@ -70,15 +70,20 @@ nav.scrolled {
 }
 
 .nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--deep);
+  display: flex;
+  align-items: center;
   text-decoration: none;
 }
 
-.nav-logo span { color: var(--gold); }
+.nav-logo img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-brand .nav-logo img {
+  height: 60px;
+}
 
 .nav-links { display: flex; gap: 3rem; list-style: none; }
 .nav-links a {
