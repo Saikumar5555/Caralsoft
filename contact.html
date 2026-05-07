@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Caralsoft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-form {
+      display: grid;
+      gap: 2rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .form-group label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--mid);
+    }
+    .form-group input, .form-group textarea {
+      padding: 1rem;
+      background: var(--white);
+      border: 1px solid var(--gold-light);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .info-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .info-item p {
+      color: var(--mid);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Caral<span>soft</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="expertise.html">Expertise</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="bg-deep" style="padding-top: 12rem; padding-bottom: 6rem;">
+    <div class="reveal">
+      <p class="section-label">Connect With Us</p>
+      <h1 class="section-title" style="color: var(--cream);">Let's Build Your<br>Strategic Team</h1>
+    </div>
+  </section>
+
+  <!-- CONTACT CONTENT -->
+  <section class="bg-white">
+    <div class="grid-2">
+      <div class="reveal">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title">Start a Conversation</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@company.com">
+          </div>
+          <div class="form-group">
+            <label for="subject">Specialized Stack</label>
+            <input type="text" id="subject" placeholder="e.g. Rust, AI/ML">
+          </div>
+          <div class="form-group">
+            <label for="message">Your Requirements</label>
+            <textarea id="message" rows="5" placeholder="Tell us about the roles you're looking to fill..."></textarea>
+          </div>
+          <button type="submit" class="cta-button">Send Message</button>
+        </form>
+      </div>
+      <div class="contact-info reveal">
+        <div class="info-item">
+          <p class="section-label">Our Presence</p>
+          <h3>Global Talent Solutions</h3>
+          <p>We operate as a strategic partner for organizations worldwide, bridging the gap between niche talent and complex technical demands.</p>
+        </div>
+        <div class="info-item">
+          <h3>Contact Details</h3>
+          <p>Email: hello@caralsoft.com</p>
+          <p>Phone: +1 (555) CARAL-01</p>
+        </div>
+        <div class="info-item">
+          <h3>Social</h3>
+          <p><a href="#" style="color: var(--gold); text-decoration: none;">LinkedIn</a> / <a href="#" style="color: var(--gold); text-decoration: none;">Twitter</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Caral<span>soft</span></a>
+        <p>Beyond Standard Staffing. Strategic IT recruitment specialists since 2021.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="contact.html">Work with us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Caralsoft. All rights reserved.</p>
+      <p>Est. 2021 · Premium Recruitment</p>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => io.observe(el));
+
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>

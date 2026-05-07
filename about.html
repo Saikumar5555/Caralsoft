@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Caralsoft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Caral<span>soft</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="expertise.html">Expertise</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="bg-deep" style="padding-top: 12rem; padding-bottom: 6rem;">
+    <div class="reveal">
+      <p class="section-label">Our Story</p>
+      <h1 class="section-title" style="color: var(--cream);">A Specialized<br>IT Recruitment Firm</h1>
+    </div>
+  </section>
+
+  <!-- ABOUT CONTENT -->
+  <section class="bg-white">
+    <div class="grid-2">
+      <div class="reveal">
+        <p class="section-label">Who We Are</p>
+        <h2 class="section-title">Bridging Critical Talent Gaps</h2>
+        <p>Established in 2021, <strong>Caralsoft</strong> is a specialized IT recruitment firm dedicated to bridging critical talent gaps in the modern digital landscape. We focus on delivering high-impact talent solutions for niche technology domains and "hard-to-fill" roles that traditional agencies often struggle to close.</p>
+        <p style="margin-top: 1.5rem;">At Caralsoft, we prioritize <strong>quality over quantity</strong>, ensuring our clients receive candidates who possess not only the technical expertise but also the strategic capability to drive long-term value.</p>
+      </div>
+      <div class="img-wrap reveal">
+        <img src="professional_collaboration_1778135521460.png" alt="Caralsoft Team Collaboration">
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="bg-cream">
+    <div class="mission-container reveal">
+      <p class="section-label">Our Core Mission</p>
+      <h2 class="quote-text">
+        "Caralsoft is more than a staffing agency; we are a <strong>strategic partner</strong>. We enable organizations to scale effectively by providing the human capital necessary to navigate the complexities of the evolving tech ecosystem."
+      </h2>
+      <p>Whether it is a single specialized hire or a full-team deployment, we deliver the precision-driven results your business demands.</p>
+    </div>
+  </section>
+
+  <!-- TIMELINE / STATS -->
+  <section class="bg-white">
+    <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+      <p class="section-label">Our Journey</p>
+      <h2 class="section-title">Since 2021</h2>
+    </div>
+    <div class="card-grid reveal">
+      <div class="premium-card">
+        <div class="card-icon">2021</div>
+        <h3 class="card-title">Foundation</h3>
+        <p class="card-text">Caralsoft was established with a vision to redefine recruitment for high-tech sectors.</p>
+      </div>
+      <div class="premium-card">
+        <div class="card-icon">90%</div>
+        <h3 class="card-title">Reliability</h3>
+        <p class="card-text">Maintaining a consistent 90% offer-to-acceptance ratio for complex niche roles.</p>
+      </div>
+      <div class="premium-card">
+        <div class="card-icon">100%</div>
+        <h3 class="card-title">Precision</h3>
+        <p class="card-text">AI-driven vetting ensures perfect alignment between talent and requirements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Caral<span>soft</span></a>
+        <p>Beyond Standard Staffing. Strategic IT recruitment specialists since 2021.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="contact.html">Work with us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Caralsoft. All rights reserved.</p>
+      <p>Est. 2021 · Premium Recruitment</p>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => io.observe(el));
+
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
